@@ -2,7 +2,10 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Github } from "lucide-react";
+import { ArrowRight, Github, AlertCircle } from "lucide-react";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import { apiRequest } from "@/lib/queryClient";
+import { useState } from "react";
 
 interface Project {
   id: number;
@@ -15,7 +18,8 @@ interface Project {
   githubUrl: string;
 }
 
-const projects: Project[] = [
+// Fallback projects for when data is loading or failed
+const fallbackProjects: Project[] = [
   {
     id: 1,
     title: "Green-Farm: AI-Powered Agricultural Marketplace",
@@ -59,6 +63,37 @@ const projects: Project[] = [
 ];
 
 export function ProjectsSection() {
+  const queryClient = useQueryClient();
+  const [showAllProjects, setShowAllProjects] = useState(false);
+  
+  // Fetch projects from the API
+  const { data: projects, isLoading, isError } = useQuery({
+    queryKey: ['/api/projects'],
+    queryFn: async () => {
+      const response = await fetch('/api/projects');
+      if (!response.ok) {
+        throw new Error('Failed to fetch projects');
+      }
+      return response.json() as Promise<Project[]>;
+    },
+    // If there are no projects in the database yet, use the fallback projects
+    enabled: true,
+  });
+
+  // Get the projects to display based on current state
+  const displayProjects = isLoading || isError 
+    ? fallbackProjects 
+    : projects && projects.length > 0 
+      ? showAllProjects 
+        ? projects 
+        : projects.slice(0, 4) // Show only the first 4 if not showing all
+      : fallbackProjects;
+
+  // Handle toggle view all projects
+  const handleViewAllProjects = () => {
+    setShowAllProjects(!showAllProjects);
+  };
+
   return (
     <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -76,8 +111,17 @@ export function ProjectsSection() {
           </p>
         </motion.div>
         
+        {isError && (
+          <div className="text-center mb-10 p-4 bg-red-50 dark:bg-red-900/20 rounded-lg">
+            <AlertCircle className="h-8 w-8 text-red-500 mx-auto mb-2" />
+            <p className="text-red-600 dark:text-red-400">
+              There was an error loading the projects. Using fallback data instead.
+            </p>
+          </div>
+        )}
+        
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
+          {displayProjects.map((project, index) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 30 }}
@@ -122,12 +166,14 @@ export function ProjectsSection() {
           ))}
         </div>
         
-        <div className="text-center mt-12">
-          <Button className="gap-2" size="lg">
-            View All Projects
-            <ArrowRight className="h-5 w-5" />
-          </Button>
-        </div>
+        {(projects && projects.length > 4) && (
+          <div className="text-center mt-12">
+            <Button className="gap-2" size="lg" onClick={handleViewAllProjects}>
+              {showAllProjects ? "Show Less" : "View All Projects"}
+              <ArrowRight className={`h-5 w-5 ${showAllProjects ? "rotate-90" : ""}`} />
+            </Button>
+          </div>
+        )}
       </div>
     </section>
   );

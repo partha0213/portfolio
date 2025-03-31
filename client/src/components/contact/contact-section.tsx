@@ -8,6 +8,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, MapPin, Send, Loader2 } from "lucide-react";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { apiRequest } from "@/lib/queryClient";
 import {
   Form,
   FormControl,
@@ -35,8 +37,8 @@ const contactFormSchema = z.object({
 type ContactFormValues = z.infer<typeof contactFormSchema>;
 
 export function ContactSection() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+  const queryClient = useQueryClient();
 
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactFormSchema),
@@ -48,20 +50,31 @@ export function ContactSection() {
     },
   });
 
-  function onSubmit(data: ContactFormValues) {
-    setIsSubmitting(true);
-    
-    // In a real application, you would send the data to your backend
-    // For now, we'll simulate a successful submission
-    setTimeout(() => {
-      console.log(data);
-      setIsSubmitting(false);
+  const submitContact = async (data: ContactFormValues) => {
+    return apiRequest("POST", "/api/contact", data);
+  };
+
+  const mutation = useMutation({
+    mutationFn: submitContact,
+    onSuccess: () => {
       form.reset();
       toast({
         title: "Message sent!",
         description: "Thank you for your message. I will get back to you soon.",
       });
-    }, 1500);
+    },
+    onError: (error) => {
+      console.error("Failed to send message:", error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again later.",
+        variant: "destructive",
+      });
+    },
+  });
+
+  function onSubmit(data: ContactFormValues) {
+    mutation.mutate(data);
   }
 
   return (
@@ -152,8 +165,8 @@ export function ContactSection() {
                   )}
                 />
                 
-                <Button type="submit" className="w-full" disabled={isSubmitting}>
-                  {isSubmitting ? (
+                <Button type="submit" className="w-full" disabled={mutation.isPending}>
+                  {mutation.isPending ? (
                     <>
                       <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                       Sending...

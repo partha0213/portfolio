@@ -46,10 +46,8 @@ export function Navbar() {
     >
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex justify-between items-center">
-          <Link href="/">
-            <a className="text-xl md:text-2xl font-bold text-primary">
-              Partha Sarathy
-            </a>
+          <Link href="/" className="text-xl md:text-2xl font-bold text-primary">
+            Partha Sarathy
           </Link>
 
           {/* Desktop Navigation */}
