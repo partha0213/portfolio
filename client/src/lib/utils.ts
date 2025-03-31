@@ -38,11 +38,9 @@ export async function handleFormSubmit(data: Record<string, string>, url: string
 }
 
 export const downloadResume = () => {
-  // This would typically download a file from the server
-  // For now, we'll just log a message since we don't have the actual resume file
+  // Log for tracking
   console.log("Resume download initiated");
   
-  // In a real implementation, this would be:
-  // window.open('/api/resume/download', '_blank');
-  alert("Resume download functionality would be implemented here with a real file.");
+  // Open the PDF in a new tab
+  window.open('/assets/Parthasarathy GaneshPrabhu.pdf', '_blank');
 };

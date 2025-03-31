@@ -198,8 +198,8 @@ export function ContactSection() {
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold text-gray-800 dark:text-white">Email</h4>
-                    <a href="mailto:contact@parthasarathy.dev" className="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">
-                      contact@parthasarathy.dev
+                    <a href="mailto:parthasarathyg693@gmail.com" className="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">
+                      parthasarathyg693@gmail.com
                     </a>
                   </div>
                 </div>
@@ -210,8 +210,8 @@ export function ContactSection() {
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold text-gray-800 dark:text-white">Phone</h4>
-                    <a href="tel:+919876543210" className="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">
-                      +91 98765 43210
+                    <a href="tel:+917094656709" className="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">
+                      +91 7094656709
                     </a>
                   </div>
                 </div>
@@ -222,7 +222,7 @@ export function ContactSection() {
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold text-gray-800 dark:text-white">Location</h4>
-                    <p className="text-gray-600 dark:text-gray-300">Tamil Nadu, India</p>
+                    <p className="text-gray-600 dark:text-gray-300">Cuddalore, Tamil Nadu, India</p>
                   </div>
                 </div>
               </div>
@@ -231,7 +231,7 @@ export function ContactSection() {
                 <h4 className="text-lg font-semibold text-gray-800 dark:text-white mb-4">Connect With Me</h4>
                 <div className="flex space-x-4">
                   <a 
-                    href="https://github.com/" 
+                    href="https://github.com/partha0213" 
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="bg-gray-200 dark:bg-gray-600 hover:bg-primary-100 dark:hover:bg-primary-900 p-3 rounded-full transition-colors"
@@ -242,7 +242,7 @@ export function ContactSection() {
                     </svg>
                   </a>
                   <a 
-                    href="https://linkedin.com/" 
+                    href="https://www.linkedin.com/in/partha-sarathy-a23a67288/" 
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="bg-gray-200 dark:bg-gray-600 hover:bg-primary-100 dark:hover:bg-primary-900 p-3 rounded-full transition-colors"

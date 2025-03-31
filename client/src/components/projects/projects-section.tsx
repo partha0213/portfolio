@@ -23,42 +23,42 @@ const fallbackProjects: Project[] = [
   {
     id: 1,
     title: "Green-Farm: AI-Powered Agricultural Marketplace",
-    description: "An innovative marketplace that uses AI-based crop quality analysis through image recognition, with blockchain-secured transactions and UPI payment integration.",
+    description: "Building a farmer-centric online marketplace that enables farmers to sell their produce directly to buyers. Implementing AI-based crop quality analysis using image recognition and integrating blockchain-secured transactions for payments.",
     image: "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     year: "2025",
     badgeColor: "bg-green-500",
-    tags: ["AI", "Blockchain", "Image Recognition", "UPI Integration"],
-    githubUrl: "https://github.com/"
+    tags: ["Full-Stack Developer", "AI Engineer", "MERN Stack", "Blockchain"],
+    githubUrl: "https://github.com/partha0213"
   },
   {
     id: 2,
     title: "Early Diagnosis of Pneumonia Using ML",
-    description: "An AI-driven medical diagnostic tool that leverages machine learning algorithms to detect pneumonia from chest X-ray images with high accuracy.",
+    description: "Leveraging machine learning algorithms to predict pneumonia onset, improving diagnostic accuracy and enabling timely medical intervention.",
     image: "https://images.unsplash.com/photo-1530497610245-94d3c16cda28?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     year: "2024",
     badgeColor: "bg-blue-500",
-    tags: ["Machine Learning", "Healthcare", "Python", "TensorFlow"],
-    githubUrl: "https://github.com/"
+    tags: ["Machine Learning", "Healthcare", "Python", "Image Analysis"],
+    githubUrl: "https://github.com/partha0213"
   },
   {
     id: 3,
     title: "Marine Environment Restoration Project",
-    description: "A MERN stack-based web application focused on raising awareness and facilitating conservation efforts for marine environments.",
+    description: "Developed a web application using React, Express, and MongoDB, deployed on Firebase, to promote marine ecosystem conservation.",
     image: "https://images.unsplash.com/photo-1518399681073-2dee15cf2b2a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     year: "2024",
     badgeColor: "bg-blue-500",
     tags: ["MERN Stack", "Conservation", "React", "MongoDB"],
-    githubUrl: "https://github.com/"
+    githubUrl: "https://github.com/partha0213"
   },
   {
     id: 4,
     title: "Online Social Media Communication Analytics",
-    description: "A data analytics platform that provides insights for social media engagement and marketing strategies through advanced algorithms.",
+    description: "This project analyzes social media interactions, engagement metrics, and sentiments to optimize marketing strategies and enhance brand presence.",
     image: "https://images.unsplash.com/photo-1568952433726-3896e3881c65?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     year: "2023",
     badgeColor: "bg-purple-500",
-    tags: ["Data Analytics", "Social Media", "JavaScript", "Firebase"],
-    githubUrl: "https://github.com/"
+    tags: ["Data Analytics", "Social Media", "Marketing", "Analytics"],
+    githubUrl: "https://github.com/partha0213"
   }
 ];
 

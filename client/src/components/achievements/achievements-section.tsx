@@ -13,32 +13,38 @@ const achievements: Achievement[] = [
   {
     id: 1,
     title: "Microsoft Azure (AZ-900) Certified",
-    organization: "2023",
+    organization: "Microsoft",
     description: "Earned certification for fundamental cloud concepts and Azure services, demonstrating knowledge of core Azure services and management tools."
   },
   {
     id: 2,
     title: "Oracle Generative AI Certification",
-    organization: "2023",
-    description: "Specialized certification in generative AI technologies, confirming expertise in developing and implementing cutting-edge AI solutions."
+    organization: "Oracle",
+    description: "Completed a certification on Generative AI technologies, confirming expertise in developing and implementing cutting-edge AI solutions."
   },
   {
     id: 3,
     title: "Technical Quiz - 2nd Place",
     organization: "KGiSL Institute of Technology, Coimbatore",
-    description: "Secured 2nd place in an inter-college technical quiz competition, demonstrating strong technical knowledge and quick problem-solving abilities."
+    description: "Achieved 2nd place in a Technical quiz, demonstrating strong technical knowledge and problem-solving abilities."
   },
   {
     id: 4,
     title: "Hackathon Participation",
     organization: "Oasys Institute of Technology, Trichy",
-    description: "Actively participated in a 36-hour hackathon, developing an innovative solution for environmental monitoring using IoT and ML technologies."
+    description: "Actively participated in a hackathon, developing innovative solutions using modern technologies."
   },
   {
     id: 5,
-    title: "Yoga Achievements",
-    organization: "International & National Level",
-    description: "Recognized for excellence in yoga competitions at both national and international levels, demonstrating discipline, focus, and balance."
+    title: "1st Place - International Yoga",
+    organization: "SGS International Yoga Foundation, Bengaluru",
+    description: "Achieved 1st place in International Yoga competition, demonstrating discipline, focus, and excellence."
+  },
+  {
+    id: 6,
+    title: "3rd Place - Yogasana Competition",
+    organization: "Puducherry & Inter-zone (Paavai Engineering College)",
+    description: "Placed 3rd in multiple Yogasana competitions, showcasing dedication and skill at various levels."
   }
 ];
 

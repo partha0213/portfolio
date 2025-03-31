@@ -11,18 +11,18 @@ interface TimelineItem {
 const timelineItems: TimelineItem[] = [
   {
     period: "2022 - Present",
-    title: "AI & ML Research",
-    description: "Working on cutting-edge AI and ML solutions for real-world problems, with a focus on predictive analytics and deep learning models."
+    title: "B.Tech in AI & ML",
+    description: "Studying Artificial Intelligence and Machine Learning at M. Kumarasamy College of Engineering with a GPA of 6.7/10.00."
   },
   {
-    period: "2021 - 2022",
+    period: "2020 - 2023",
+    title: "Diploma in Marine Engineering",
+    description: "Completed diploma program at Chandy Polytechnic College with 81%, gaining strong foundation in engineering principles."
+  },
+  {
+    period: "2023 - Present",
     title: "Full-Stack Development",
-    description: "Developed responsive web applications using the MERN stack, implementing modern UI/UX principles and best practices."
-  },
-  {
-    period: "2020 - 2021",
-    title: "Marine Engineering Studies",
-    description: "Completed diploma program with distinction, laying a strong foundation in engineering principles and problem-solving methodologies."
+    description: "Developing web applications using the MERN stack, with a focus on building scalable solutions and implementing modern UI/UX principles."
   }
 ];
 
@@ -84,15 +84,23 @@ export function AboutSection() {
                 </div>
                 <div className="flex items-center">
                   <Check className="h-5 w-5 text-green-500 mr-2" />
-                  <span className="text-gray-700 dark:text-gray-300">Decision-making</span>
-                </div>
-                <div className="flex items-center">
-                  <Check className="h-5 w-5 text-green-500 mr-2" />
                   <span className="text-gray-700 dark:text-gray-300">Team Management</span>
                 </div>
                 <div className="flex items-center">
                   <Check className="h-5 w-5 text-green-500 mr-2" />
-                  <span className="text-gray-700 dark:text-gray-300">Critical Thinking</span>
+                  <span className="text-gray-700 dark:text-gray-300">Decision-making</span>
+                </div>
+                <div className="flex items-center">
+                  <Check className="h-5 w-5 text-green-500 mr-2" />
+                  <span className="text-gray-700 dark:text-gray-300">C++</span>
+                </div>
+                <div className="flex items-center">
+                  <Check className="h-5 w-5 text-green-500 mr-2" />
+                  <span className="text-gray-700 dark:text-gray-300">Java</span>
+                </div>
+                <div className="flex items-center">
+                  <Check className="h-5 w-5 text-green-500 mr-2" />
+                  <span className="text-gray-700 dark:text-gray-300">Python</span>
                 </div>
               </div>
             </div>
