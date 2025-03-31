@@ -1,0 +1,98 @@
+Prompt for Portfolio Website Generation
+"Create a modern, interactive, and fully responsive portfolio website for Partha Sarathy, a software developer specializing in Artificial Intelligence (AI), Machine Learning (ML), and Full-Stack Development. The portfolio should be visually appealing, user-friendly, and optimized for both desktop and mobile devices.
+
+Sections & Features:
+1. Home (Landing Page):
+A hero section with a high-quality professional photo, name (Partha Sarathy), and a short tagline:
+"AI & ML Developer | Full-Stack Engineer | Innovator"
+
+Call-to-action buttons:
+
+Download Resume
+
+Contact Me
+
+Animated introduction with a dynamic text effect highlighting AI, ML, Full-Stack Development, and Blockchain.
+
+2. About Me:
+A professional bio emphasizing:
+
+B.Tech in AI & ML (M. Kumarasamy College of Engineering)
+
+Diploma in Marine Engineering (Chandy Polytechnic College)
+
+Passion for AI-driven solutions, predictive analytics, and blockchain-secured platforms.
+
+Soft Skills: Problem-solving, Decision-making, Team Management.
+
+A visually appealing timeline of education and career journey.
+
+3. Projects (Portfolio Showcase):
+A grid-based interactive section displaying key projects with images, descriptions, and links to GitHub. Featured projects:
+
+Green-Farm: AI-Powered Agricultural Marketplace (2025)
+
+AI-based crop quality analysis using image recognition.
+
+Blockchain-secured transactions & UPI payment integration.
+
+Supports multi-language accessibility for farmers.
+
+Early Diagnosis of Pneumonia Using ML (2024)
+
+AI-driven medical diagnostics for pneumonia detection.
+
+Marine Environment Restoration Project (2024)
+
+MERN stack-based web application for marine conservation awareness.
+
+Online Social Media Communication Analytics (2023)
+
+Data analytics for social media engagement & marketing strategies.
+
+4. Skills:
+Programming Languages: C++, Java, Python
+
+Frameworks & Technologies: MERN Stack, TensorFlow.js, Supabase, Firebase
+
+AI/ML Expertise: Predictive Modeling, NLP, Deep Learning
+
+Blockchain & Payments: MetaMask, UPI, Razorpay, Stripe
+
+5. Achievements & Certifications:
+Microsoft Azure (AZ-900) Certified
+
+Oracle Generative AI Certification
+
+2nd Place in Technical Quiz (KGiSL Institute of Technology, Coimbatore)
+
+Hackathon Participation (Oasys Institute of Technology, Trichy)
+
+Yoga Achievements (International & National Level)
+
+6. Contact Me:
+A user-friendly contact form for inquiries.
+
+Direct email and phone number displayed professionally.
+
+Social Media Links:
+
+LinkedIn
+
+GitHub
+
+Technical Requirements:
+Built with Next.js/React.js for fast performance.
+
+Styled with Tailwind CSS for a modern look.
+
+Framer Motion animations for smooth transitions.
+
+SEO-optimized & mobile-friendly design.
+
+Dark Mode toggle for user preference.
+
+Deployment on Vercel, Netlify, or GitHub Pages.
+
+The website should have a clean, modern, and tech-focused aesthetic, showcasing Partha Sarathy’s expertise and projects effectively."
+
