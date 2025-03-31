@@ -25,7 +25,7 @@ export const projects = pgTable("projects", {
   year: text("year").notNull(),
   badgeColor: text("badge_color").notNull(),
   tags: text("tags").array().notNull(),
-  githubUrl: text("github_url"),
+  githubUrl: text("github_url").default("https://github.com/partha0213"),
 });
 
 export const insertProjectSchema = createInsertSchema(projects).omit({
