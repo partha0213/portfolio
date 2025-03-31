@@ -10,7 +10,7 @@ import {
   insertAchievementSchema,
   insertTimelineItemSchema
 } from "@shared/schema";
-import { sendContactEmail, sendAutoReply } from "./emailService";
+import { sendContactEmail, sendAutoReply, verifyEmailConfig } from "./emailService";
 
 const contactFormSchema = z.object({
   name: z.string().min(2),
@@ -433,22 +433,42 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Store contact message in the database
       const contactMessage = await storage.createContactMessage(validatedData);
       
+      // Check if email credentials are configured
+      if (!process.env.EMAIL_USER || !process.env.EMAIL_PASSWORD) {
+        console.warn("Email credentials not configured.");
+        return res.status(200).json({ 
+          success: true,
+          message: "Your message has been saved, but email notifications are not configured yet."
+        });
+      }
+      
       // Send email notification to the portfolio owner
       try {
-        await sendContactEmail(contactMessage);
+        const emailSent = await sendContactEmail(contactMessage);
+        
+        if (!emailSent) {
+          console.error("Failed to send email notification: Email service returned false");
+          return res.status(200).json({ 
+            success: true,
+            message: "Your message has been saved, but there was an issue sending email notifications."
+          });
+        }
         
         // Send auto-reply to the person who submitted the contact form
         await sendAutoReply(contactMessage.email, contactMessage.name);
+        
+        return res.status(200).json({ 
+          success: true,
+          message: "Thank you for your message. I will get back to you soon."
+        });
       } catch (emailError) {
         console.error("Failed to send email notification:", emailError);
-        // Continue execution even if email fails
-        // We don't want to show an error to the user if only the email fails
+        // Provide a better message but still return a 200 status since we saved the message
+        return res.status(200).json({ 
+          success: true,
+          message: "Your message has been saved, but there was an issue sending email notifications."
+        });
       }
-      
-      res.status(200).json({ 
-        success: true,
-        message: "Thank you for your message. I will get back to you soon."
-      });
     } catch (error) {
       handleValidationError(error, res);
     }
@@ -500,6 +520,37 @@ export async function registerRoutes(app: Express): Promise<Server> {
         });
       }
     });
+  });
+  
+  // API endpoint to verify email configuration
+  app.get("/api/email/verify", async (_req, res) => {
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASSWORD) {
+      return res.status(400).json({
+        success: false,
+        message: "Email credentials not configured. Please set EMAIL_USER and EMAIL_PASSWORD environment variables."
+      });
+    }
+    
+    try {
+      const emailVerified = await verifyEmailConfig();
+      if (emailVerified) {
+        return res.status(200).json({
+          success: true,
+          message: "Email configuration is valid and working correctly."
+        });
+      } else {
+        return res.status(400).json({
+          success: false,
+          message: "Email configuration failed verification. Check server logs for details."
+        });
+      }
+    } catch (error) {
+      console.error("Error verifying email configuration:", error);
+      return res.status(500).json({
+        success: false,
+        message: "Error verifying email configuration. Check server logs for details."
+      });
+    }
   });
 
   const httpServer = createServer(app);

@@ -65,9 +65,18 @@ export function ContactSection() {
     },
     onError: (error) => {
       console.error("Failed to send message:", error);
+      
+      // Check if we received a more specific error message from the server
+      let errorMessage = "Failed to send message. Please try again later.";
+      
+      // Try to extract a more specific error message if available
+      if (error instanceof Error) {
+        errorMessage = error.message || errorMessage;
+      }
+      
       toast({
         title: "Error",
-        description: "Failed to send message. Please try again later.",
+        description: errorMessage,
         variant: "destructive",
       });
     },
