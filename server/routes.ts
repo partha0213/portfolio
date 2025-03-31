@@ -1,4 +1,4 @@
-import type { Express, Request, Response } from "express";
+import type { Express, Request, Response, NextFunction } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { z } from "zod";
@@ -10,6 +10,7 @@ import {
   insertAchievementSchema,
   insertTimelineItemSchema
 } from "@shared/schema";
+import { sendContactEmail, sendAutoReply } from "./emailService";
 
 const contactFormSchema = z.object({
   name: z.string().min(2),
@@ -431,6 +432,18 @@ export async function registerRoutes(app: Express): Promise<Server> {
       
       // Store contact message in the database
       const contactMessage = await storage.createContactMessage(validatedData);
+      
+      // Send email notification to the portfolio owner
+      try {
+        await sendContactEmail(contactMessage);
+        
+        // Send auto-reply to the person who submitted the contact form
+        await sendAutoReply(contactMessage.email, contactMessage.name);
+      } catch (emailError) {
+        console.error("Failed to send email notification:", emailError);
+        // Continue execution even if email fails
+        // We don't want to show an error to the user if only the email fails
+      }
       
       res.status(200).json({ 
         success: true,
