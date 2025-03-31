@@ -41,6 +41,6 @@ export const downloadResume = () => {
   // Log for tracking
   console.log("Resume download initiated");
   
-  // Open the PDF in a new tab
-  window.open('/assets/Parthasarathy GaneshPrabhu.pdf', '_blank');
+  // Fetch from API endpoint and trigger download
+  window.location.href = '/api/resume/download';
 };

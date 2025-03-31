@@ -490,11 +490,15 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
   // API endpoint for resume download
   app.get("/api/resume/download", (req, res) => {
-    // In a real app, this would serve an actual file
-    // For now, we'll just return a dummy response
-    res.status(200).json({
-      success: true,
-      message: "Resume download endpoint"
+    const filePath = process.cwd() + '/public/assets/Parthasarathy GaneshPrabhu.pdf';
+    res.download(filePath, 'Parthasarathy_GaneshPrabhu_Resume.pdf', (err) => {
+      if (err) {
+        console.error("Error downloading resume:", err);
+        res.status(500).json({
+          success: false,
+          message: "Failed to download resume"
+        });
+      }
     });
   });
 
