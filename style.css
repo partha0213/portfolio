@@ -1,0 +1,486 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg-color: #1f242d;
+  --second-bg-color: #323946;
+  --text-color: #fff;
+  --main-color: #0ef;
+  --highlight-color: #0ef;
+  --nav-height: 4rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  scroll-behavior: smooth;
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8%;
+  z-index: 1000;
+  height: var(--nav-height);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 2rem;
+  color: var(--main-color);
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
+.navlist {
+  display: flex;
+  list-style: none;
+}
+
+.navlist li {
+  margin: 0 1.5rem;
+}
+
+.navlist a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.navlist a.active,
+.navlist a:hover {
+  color: var(--main-color);
+}
+
+.navlist a.active::after,
+.navlist a:hover::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background: var(--main-color);
+  border-radius: 2px;
+}
+
+#menu-icon {
+  font-size: 2.5rem;
+  color: var(--main-color);
+  cursor: pointer;
+  display: none;
+}
+
+section {
+  padding: 6rem 8% 2rem 8%;
+  min-height: 100vh;
+}
+
+/* Home Section */
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.home-content {
+  max-width: 600px;
+}
+
+.home-content h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+}
+
+.home-content h1 span {
+  color: var(--main-color);
+}
+
+.animated-text h3 {
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--main-color);
+}
+
+#typed-text {
+  color: var(--main-color);
+}
+
+.home-content p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #bdbdbd;
+}
+
+.btn-box {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.7rem 2rem;
+  background: var(--main-color);
+  color: #1f242d;
+  border-radius: 2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s;
+}
+
+.btn:hover {
+  background: var(--text-color);
+  color: var(--main-color);
+}
+
+.social-icons a {
+  color: var(--main-color);
+  font-size: 1.7rem;
+  margin-right: 1rem;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: var(--text-color);
+}
+
+.home-img img {
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 6px solid var(--main-color);
+  box-shadow: 0 8px 32px 0 rgba(0,238,255,0.15);
+}
+
+/* About */
+.about {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  background: var(--second-bg-color);
+  border-radius: 2rem;
+}
+
+.about-img img {
+  width: 300px;
+  height: 300px;
+  border-radius: 2rem;
+  object-fit: cover;
+  border: 4px solid var(--main-color);
+}
+
+.about-content .heading {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.about-content h3 {
+  color: var(--main-color);
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.about-content p {
+  color: #bdbdbd;
+  margin-bottom: 1.5rem;
+}
+
+/* Services */
+.services .heading {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+}
+
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.service-box {
+  background: var(--second-bg-color);
+  padding: 2rem;
+  border-radius: 1.5rem;
+  text-align: center;
+  max-width: 300px;
+  box-shadow: 0 8px 32px rgba(0, 238, 255, 0.13);
+  border: 1.5px solid rgba(0, 238, 255, 0.13);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-box:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 12px 40px rgba(0, 238, 255, 0.22);
+}
+
+/* Portfolio */
+.portfolio {
+  background: var(--second-bg-color);
+  border-radius: 2rem;
+  padding: 2rem 8%;
+}
+
+.portfolio .heading {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+}
+
+.portfolio-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.portfolio-card {
+  background-color: var(--bg-color);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 238, 255, 0.13);
+  max-width: 350px;
+  flex: 1 1 300px;
+  border: 1px solid rgba(0, 238, 255, 0.1);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 40px rgba(0, 238, 255, 0.22);
+}
+
+.portfolio-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-bottom: 1px solid rgba(0, 238, 255, 0.1);
+}
+
+.portfolio-content {
+  padding: 1.5rem;
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.portfolio-content h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: var(--main-color);
+}
+
+.portfolio-content p {
+  color: #bdbdbd;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.github-btn {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--main-color);
+  color: #000;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  justify-content: center;
+}
+
+.github-btn:hover {
+  background-color: #00bcd4;
+  color: #000;
+}
+
+.github-btn i {
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+}
+
+/* Contact */
+.contact {
+  background: var(--bg-color);
+  padding: 6rem 8%;
+}
+
+.contact .heading {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+}
+
+.contact form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: var(--second-bg-color);
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 24px rgba(0,238,255,0.12);
+}
+
+.contact form .input-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.contact form .input-box input,
+.contact form textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background: transparent;
+  border: 1.5px solid var(--main-color);
+  border-radius: 1rem;
+  color: var(--text-color);
+  font-size: 1rem;
+  resize: none;
+  outline: none;
+}
+
+.contact form textarea {
+  min-height: 150px;
+  margin-top: 1rem;
+}
+
+.contact form .btn {
+  margin-top: 1rem;
+  cursor: pointer;
+  background: var(--main-color);
+  color: var(--bg-color);
+  border: none;
+}
+
+/* Footer */
+footer {
+  background: var(--second-bg-color);
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .navlist {
+    flex-direction: column;
+    align-items: center;
+    display: none;
+  }
+
+  #menu-icon {
+    display: block;
+  }
+
+  .home,
+  .about {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .home-img img,
+  .about-img img {
+    width: 250px;
+    height: 250px;
+  }
+
+  .btn-box {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    padding-top: 2rem;
+  }
+  
+  .portfolio-card {
+    background-color: #0c0c0c;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 238, 255, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .portfolio-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .portfolio-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .portfolio-content {
+    padding: 1rem;
+    color: #fff;
+  }
+  
+  .portfolio-content h3 {
+    font-size: 1.2rem;
+    color: var(--main-color);
+    margin-bottom: 0.5rem;
+  }
+  
+  .portfolio-content p {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+  
+  .github-btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--main-color);
+    color: #000;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .github-btn:hover {
+    background-color: #00bcd4;
+  }
+  
+  .github-btn i {
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+  }
+}
