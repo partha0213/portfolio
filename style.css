@@ -25,7 +25,7 @@ body {
 
 /* Header */
 header {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
@@ -50,6 +50,46 @@ header {
 .navlist {
   display: flex;
   list-style: none;
+  transition: max-height 0.3s ease;
+}
+@media (max-width: 768px) {
+  .navlist {
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    overflow: hidden;
+    max-height: 0;
+    background-color: var(--bg-color);
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    padding: 1rem 0;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+  }
+  .navlist.open {
+    display: flex;
+    max-height: 500px; /* enough height to show all menu items */
+  }
+  .navlist li {
+    margin: 0.5rem 0;
+    width: 100%;
+    text-align: center;
+  }
+  .navlist a {
+    font-size: 1.2rem;
+    padding: 0.75rem 0;
+    display: block;
+    width: 100%;
+    color: var(--main-color);
+    transition: color 0.3s ease;
+  }
+  .navlist a:hover {
+    color: #3ff;
+  }
 }
 
 .navlist li {
@@ -87,6 +127,15 @@ header {
   color: var(--main-color);
   cursor: pointer;
   display: none;
+  position: absolute;
+  right: 1.5rem;
+  top: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  #menu-icon {
+    display: block;
+  }
 }
 
 section {
@@ -402,6 +451,15 @@ footer {
     display: none;
   }
 
+  .home {
+    flex-direction: column;
+  }
+
+  .home-img {
+    order: -1;
+    margin-bottom: 1.5rem;
+  }
+
   #menu-icon {
     display: block;
   }
@@ -428,6 +486,7 @@ footer {
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
     padding-top: 2rem;
+    justify-content: center;
   }
   
   .portfolio-card {
@@ -436,6 +495,8 @@ footer {
     overflow: hidden;
     box-shadow: 0 0 15px rgba(0, 238, 255, 0.1);
     transition: transform 0.3s ease;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .portfolio-card:hover {
@@ -483,4 +544,48 @@ footer {
     margin-right: 0.5rem;
     font-size: 1.2rem;
   }
+}
+.achievements, .certificates {
+  background: linear-gradient(135deg, #0e1a2b, #1f2a44);
+  border-radius: 1.5rem;
+  padding: 2rem 6%;
+  margin: 2rem auto;
+  max-width: 700px;
+  box-shadow: 0 8px 24px rgba(0, 238, 255, 0.15);
+  border: 1px solid rgba(0, 238, 255, 0.2);
+  transition: box-shadow 0.3s ease;
+}
+
+.achievements:hover, .certificates:hover {
+  box-shadow: 0 12px 40px rgba(0, 238, 255, 0.3);
+}
+
+.achievements .heading, .certificates .heading {
+  font-size: 2rem;
+  color: var(--main-color);
+  text-align: center;
+  margin-bottom: 1rem;
+  position: relative;
+  font-weight: 700;
+}
+
+.achievements .heading::after, .certificates .heading::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: var(--main-color);
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+  position: relative;
+}
+
+.achievements-list, .certificates-list {
+  list-style-type: disc;
+  padding-left: 2.5rem;
+  color: #a0b9d6;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 0 auto;
 }

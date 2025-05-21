@@ -33,18 +33,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Navbar Active State on Scroll
 const sections = document.querySelectorAll('section');
-const navLinks = document.querySelectorAll('header nav .navlist a');
+const navLinksHeader = document.querySelectorAll('header nav .navlist a');
 
 window.addEventListener('scroll', () => {
   let current = '';
   sections.forEach(section => {
     const sectionTop = section.offsetTop - 80;
     const sectionHeight = section.offsetHeight;
-    if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+    if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
       current = section.getAttribute('id');
     }
   });
-  navLinks.forEach(link => {
+  navLinksHeader.forEach(link => {
     link.classList.remove('active');
     if (link.getAttribute('href') === `#${current}`) {
       link.classList.add('active');
@@ -52,13 +52,16 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// Responsive Navbar Toggle
 const menuIcon = document.getElementById('menu-icon');
 const navlist = document.querySelector('.navlist');
+const navLinksToggle = document.querySelectorAll('.navlist a');
+
 menuIcon.onclick = () => {
+  console.log('Menu icon clicked');
   navlist.classList.toggle('open');
 };
-navLinks.forEach(link => {
+
+navLinksToggle.forEach(link => {
   link.onclick = () => {
     navlist.classList.remove('open');
   };
@@ -118,6 +121,12 @@ if (contactForm) {
       if (response.ok) {
         contactForm.style.display = 'none';
         formSuccess.style.display = 'block';
+        setTimeout(() => {
+          formSuccess.style.display = 'none';
+          contactForm.style.display = 'block';
+          formSuccess.style.color = ''; // reset color
+          formSuccess.textContent = ''; // reset text
+        }, 3000);
       } else {
         formSuccess.style.display = 'block';
         formSuccess.style.color = 'red';
