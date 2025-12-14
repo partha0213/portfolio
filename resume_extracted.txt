@@ -1,0 +1,81 @@
+PARTHASARATHY GANESHPRABU
+Cuddalore — parthasarathyg693@gmail.com — 7094656709
+LinkedIn — GitHub — Portfolio
+Objective
+Motivated to apply my knowledge and skills in real-world AI and full-stack development environments. Eager
+to gain deeper practical experience through continuous learning and contribute effectively to organizational
+goals.
+Education
+M. Kumarasamy College of Engineering, Karur Oct 2022 – Present
+Bachelor of Technology in Artificial Intelligence and Machine Learning GPA: 6.7/10.0
+Chandy Polytechnic College July 2020 – Mar 2023
+Diploma – Marine Engineering Percentage: 81%
+Area of Interest
+•Machine Learning
+•Backend Development(Fast api)
+•Artificial Intelligence (agentic ai , A2A , Langchain, Langraph)
+Skills
+Languages: C++, Java, Python, PHP, React
+Soft Skills: Problem Solving, Team Management, Decision Making
+Experience
+AI Trainee – CodeWork (Internship) May 2025 – June 2025
+Worked on AI-driven automation and backend integration projects, gaining experience in collaborative AI
+workflows, model testing, and real-time application development.
+AI Trainee – (4 Months Experience) Aug 2025 – Dec 2025
+Involved in advanced AI projects including model fine-tuning, multi-agent RAG-based systems, and docu-
+mentation using L ATEX on Overleaf. Focused on innovation, architecture design, and intelligent automation
+solutions.
+Projects
+AI Tutor (2025)
+Role: AI Trainee
+Developed an AI-based interactive tutor using RAG + LLM architecture for personalized learning assistance.
+Integrated text understanding, knowledge retrieval, and conversation memory to deliver adaptive teaching
+experiences.
+AI Virtual Intern Platform (2025)
+Role: AI Trainee
+Built a virtual internship management system powered by LLMs to automate intern evaluation, task rec-
+ommendation, and mentor-intern communication. Integrated intelligent workflow management and analytics
+dashboard.
+AI Visual Agent (2025)
+Role: AI Trainee
+Designed an AI agent capable of visual understanding through image and video analysis using multimodal
+models. Implemented object detection, caption generation, and OCR-based text extraction for interactive
+visual reasoning.
+1
+
+AI Virtual Board (2025)
+Role: AI Trainee
+Created an interactive whiteboard application enhanced with AI for real-time handwriting recognition, diagram
+interpretation, and idea mapping. Integrated collaborative tools using NLP and vision-based assistance.
+Fire Detection System (2025)
+Role: AI Trainee
+Developed a CNN-based real-time fire detection system using video feed analysis. Enabled automatic alerting
+through IoT integration and OpenCV-based monitoring.
+SmallLM Project (2025)
+Role: AI Trainee
+Researched and trained a lightweight transformer (SmallLM) optimized for 4GB GPUs. Implemented QLoRA
+fine-tuning and Unsloth framework to enhance efficiency in small-scale LLM experiments.
+Green-Farm: AI-Powered Agricultural Marketplace (Ongoing) 2025
+Role: Full Stack Developer & AI Engineer
+Built a farmer-centric marketplace enabling direct produce sales. Integrated AI-based crop quality analysis and
+blockchain-secured UPI payments.
+Early Diagnosis of Pneumonia Using ML (2024)
+Role: Machine Learning Engineer
+Used ML algorithms to predict pneumonia onset from medical imaging datasets, enhancing diagnostic accuracy
+and enabling early intervention.
+Online Social Media Communication Analytics (2023)
+Role: Data Analyst
+Analyzed social media metrics to optimize engagement and improve digital brand presence.
+Achievements
+•Achieved 1st place in International Yoga Competition at SGS International Yoga Foundation, Bengaluru.
+•Secured 2nd place in Technical Quiz at KGiSL Institute of Technology, Coimbatore.
+•Participated in Hackathon at Oasys Institute of Technology, Trichy.
+•Represented college in All India Inter-University Yoga Team (Kalinga Institute of Industrial Technology,
+Bhubaneswar).
+Certifications
+•Microsoft Certified: Azure Fundamentals (AZ-900)
+•NPTEL – The Joy of Computing Using Python
+•NPTEL – Introduction to Industry 4.0 and Industrial Internet of Things
+•Oracle Certified – Generative AI
+2
+
