@@ -364,19 +364,17 @@ const certItems = document.querySelectorAll('.cert-item');
 const previewImage = document.querySelector('.preview-image');
 const previewPlaceholder = document.querySelector('.preview-placeholder');
 
-// Certificate image mapping from Netlify site
+// Certificate image mapping from local certificates folder (converted to PNG)
 const certificateImages = {
-  'azure': 'https://parthasarathyg693.netlify.app/certs/Microsoft Azure Fundamentals (AZ-900).png',
-  'oracle': 'https://parthasarathyg693.netlify.app/certs/Oracle Cloud Infrastructure.jpeg',
-  'cybersecurity': 'https://parthasarathyg693.netlify.app/certs/Foundations of Cybersecurity.jpeg',
-  'ml-python': 'https://parthasarathyg693.netlify.app/certs/ML with pyhton.jpeg',
-  'ai-policy': 'https://parthasarathyg693.netlify.app/certs/Artificial Intelligence for economic.jpeg',
-  'intro-ai': 'https://parthasarathyg693.netlify.app/certs/Introduction to Artificial Intelligence.jpeg',
-  'industry40': 'https://parthasarathyg693.netlify.app/certs/Introduction to Industry 4.0.jpeg',
-  'sql': 'https://parthasarathyg693.netlify.app/certs/sql(basic).png',
-  'python-basic': 'https://parthasarathyg693.netlify.app/certs/python(basic).png',
-  'joy-python': 'https://parthasarathyg693.netlify.app/certs/The joy of computing using python.jpeg',
-  'data-analytics': 'https://parthasarathyg693.netlify.app/certs/Data Analytics Essentials.png'
+  'azure': 'certificates/images/Azure Fundamentals parthasarathy.png',
+  'oracle': 'certificates/images/oracle partha.jpeg',
+  'cybersecurity': 'certificates/images/Coursera TJ3MQKG6CQDX.png',
+  'ai-economics': 'certificates/images/Artificial Intelligence for Economics.png',
+  'industry40': 'certificates/images/Introduction To Industry 4 (1) (1).0 And Industrial Internet Of Things.png',
+  'joy-python': 'certificates/images/The Joy of Computing using Python (1).png',
+  'data-analytics': 'certificates/images/Parthasarathy G(Cisco Data Analytics Essential).png',
+  'python-basic': 'certificates/images/python_basic certificate.png',
+  'sql-basic': 'certificates/images/sql_basic certificate.png'
 };
 
 certItems.forEach(item => {
